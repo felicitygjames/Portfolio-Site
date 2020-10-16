@@ -1,0 +1,206 @@
+/* 
+Colors used:
+    Primary color: (neutral): #efc9af
+    Secondary color (light blue): #d4f1f9
+    Text color (navy): #104c91
+    Visited link color (purple): #360d96
+    Active link color (red): #ff0000
+*/
+
+:root {
+    --primary-color: #efc9af;
+    --secondary-color: #d4f1f9;
+    --navy-text-color: #104c91;
+    --visited-link-color: #360d96;
+    --active-link-color: #ff0000;
+    --grid-item-color: #d3d3d3;
+  }
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    background-color: var(--secondary-color);
+    line-height: 1.6;
+}
+
+p {
+    color: var(--navy-text-color);
+}
+
+h1 {
+    font-size: 30px;
+    color: var(--navy-text-color);
+}
+
+nav {
+    font-weight: 600;
+}
+
+a {
+    color: var(--navy-text-color);
+}
+
+a:visited {
+    color: var(--visited-link-color);
+}
+
+a:active {
+    color: var(--active-link-color);
+}
+
+a:hover, a:focus {
+    /* With hover, the underline of a link goes away */
+    text-decoration: none;
+}
+
+button, .button {
+    border: none;
+    display: inline-block;
+    font-family: inherit;
+    background-color: var(--navy-text-color);
+    color: var(--secondary-color);
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 3px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.3);
+    transition: 0.2s opacity; 
+}
+
+
+button:hover, button:focus, .button:hover, .button:focus {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.button_secondary {
+    background-color: var(--navy-text-color);
+    color: var(--secondary-color);
+}
+
+.navigation-list__item--active {
+    text-decoration: none;
+}
+
+.profile__portrait {
+    float: left;
+    width: 250px;
+    margin-right: 40px;
+    border-radius: 50%;
+}
+
+.page-footer {
+    clear: both;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.profile {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.page-header {
+    display: flex;
+    width: 100%;
+    padding: 20px;
+}
+
+.page-header__item {
+    flex: 0 1 200px;
+}
+
+/* For the following, the pseudo-selector "last-child" needs to go directly after the colon with no space, or it's an error */
+
+.page-header__item:last-child {
+    flex-grow: 1;
+    text-align: right;
+}
+
+.navigation-list {
+    /* The below means that there will be no bullet points on the unordered list */
+    list-style-type: none;
+}
+
+.navigation-list li {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.grid__item {
+    background-color: var(--grid-item-color);
+    padding: 20px 20px 20px 20px;
+}
+
+@media all and (min-width: 500px) and (max-width: 750px) {
+    .grid {
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 10px;
+    }
+    .grid__item:last-child {
+        grid-column: auto / auto;
+        grid-row: auto / auto;
+    }
+    h1 {
+        font-size: 22px;
+    }
+}
+
+@media all and (max-width: 500px) {
+    .grid {
+        grid-template-columns: 1fr;
+        grid-gap: 10px;
+    }
+    .grid__item:last-child {
+        grid-column: auto / auto;
+        grid-row: auto / auto;
+    }
+    h1 {
+        font-size: 22px;
+    }
+}
+
+@media all and (max-width: 750px) {
+    .grid {
+        grid-gap: 10px;
+    }
+    .grid__item:last-child {
+        grid-column: auto / auto;
+        grid-row: auto / auto;
+    }
+    h1 {
+        font-size: 22px;
+    }
+}
+
+.about-me-stuff {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    display: flex;
+    justify-content: center;
+}
+
+.cv-button {
+    display: flex;
+    justify-content: center;
+}
+
+  /* .responsive {
+    max-width: 100%;
+    height: auto;
+  } */
